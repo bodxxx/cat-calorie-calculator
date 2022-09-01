@@ -1,0 +1,214 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+button,
+input {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+img {
+    border-radius: 50%;
+    max-width: 100%;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 0;
+}
+.calculator {
+    width: 100%;
+    max-width: 992px;
+}
+.calculator__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C5C3C3;
+}
+.calculator__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+    color: #3A3533;
+}
+.calculator__body {
+    padding-top: 35px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:"age activity"
+                        "weight weight"
+                        "btn btn"
+}
+.age {
+    grid-area: age;
+}
+.activity {
+    grid-area: activity;
+}
+.weight {
+    grid-area: weight;
+    width: 50%;
+}
+.calculation {
+    padding-top: 50px;
+    grid-area: btn;
+    text-align: center;
+}
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #3A3533;
+}
+.option {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: #3A3533;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #E81C24;
+    margin-right: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.option.active .dot{
+    border: 1px solid #000;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+}
+
+.weight-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.weight-header .title {
+    margin-bottom: 0;
+}
+
+.weight-header .input-number {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #3A3533;
+    max-width: 55px;
+}
+.btn {
+    font-weight: 700;
+    background-color: #E81C24;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-radius: 5px;
+    line-height: 23px;
+}
+.calc-btn {
+    font-size: 20px;
+    padding: 13px 18px 14px;
+    text-align: center;
+}
+.close-btn {
+    padding: 10px 25px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #c5171d;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 5px 0px rgba(66, 68, 90, 1);
+}
+.range-container {
+    width: 100%;
+}
+.weight-range {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%; 
+    height: 2px; 
+    background: #E81C24;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.weight-range:hover {
+    opacity: 1; 
+}
+.weight-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: url(range-btn.png) no-repeat center center / cover;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.weight-range::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: url(range-btn.png) no-repeat center center / cover;
+    cursor: pointer; 
+    border-radius: 50%;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-window {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    text-align: center;
+}
+.modal-window h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.result {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.modal-window p {
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 20px;
+}

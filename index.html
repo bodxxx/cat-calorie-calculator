@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор калорій</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="calculator">
+            <div class="calculator__header">
+                <h1 class="calculator__title">
+                    Профіль улюбленця
+                </h1>
+                <img src="assets/img.png" alt="Cat Lu">
+            </div>
+            <div class="calculator__body">
+                <div class="age">
+                    <h2 class="title">Вік</h2>
+                    <div class="option age-option" onClick="activeAgeOption('one')">
+                        <span class="dot age-dot"></span>
+                        1-3 місяці
+                    </div>
+                    <div class="option age-option" onClick="activeAgeOption('two')">
+                        <span class="dot age-dot"></span>
+                        4-6 місяців
+                    </div>
+                    <div class="option age-option" onClick="activeAgeOption('three')">
+                        <span class="dot age-dot"></span>
+                        7-12 місяців
+                    </div>
+                    <div class="option age-option" onClick="activeAgeOption('four')">
+                        <span class="dot age-dot"></span>
+                        12 місяців і більше
+                    </div>
+                </div>
+                <div class="activity">
+                    <h2 class="title">Активність</h2>
+                    <div class="option activity-option" onClick="activeActivityOption('one')">
+                        <span class="dot activity-dot"></span>
+                        Низька активність
+                    </div>
+                    <div class="option activity-option" onClick="activeActivityOption('two')">
+                        <span class="dot activity-dot"></span>
+                        Середня активність
+                    </div>
+                    <div class="option activity-option" onClick="activeActivityOption('three')">
+                        <span class="dot activity-dot"></span>
+                        Висока активність
+                    </div>
+                </div>
+                <div class="weight">
+                    <div class="weight-header">
+                        <h2 class="title">Вага (кг)</h2>
+                        <input type="number" class="input-number" id="input-number" value="0" step=".1">
+                        </div>
+                    </div>
+                    <div class="range-container">
+                        <input type="range" min="0" max="15" value="0" step=".1" class="weight-range" id="weightRange">
+                      </div>
+                </div>
+                <div class="calculation">
+                    <button class="btn calc-btn" id="calc-btn">Розрахувати</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="modal-window">
+            <h3>Наша рекомендація</h3>
+            <div class="result" id="result"></div>
+            <button class="btn close-btn" id="close-btn">Зрозуміло</button>
+            <p>Дякуємо, що скористалися нашим сервісом</p>
+        </div>
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+</html>
